@@ -1,16 +1,35 @@
-# expensetracker
+# 💰 Expense Manager App
 
-A new Flutter project.
+The Expense Manager is a user-friendly mobile app designed to help individuals track and manage their finances with ease. The app provides a sleek dark UI, giving users insights into their spending habits through graphs and categorized data.
 
-## Getting Started
+## 📱 Features
 
-This project is a starting point for a Flutter application.
+- **Dashboard Overview**:
+  - Income, Expenses, and Balance summary
+  - Recent expenses list
+- **Transaction History**:
+  - Detailed log of all expenses with category, date, and amount
+- **Visualization**:
+  - Pie chart for "Expenses by Category"
+  - Bar chart for "Monthly Expense Trend"
+- **Dark Mode UI**:
+  - Eye-friendly design with vibrant category colors
 
-A few resources to get you started if this is your first Flutter project:
+## 🧩 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Dashboard | Transaction History | Charts View |
+|----------|---------------------|--------------|
+| ![Dashboard](./assets/page1.png) | ![History](./assets/page2.png) | ![Charts](./assets/page3.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔧 Technologies Used
+
+- Flutter (UI & App Logic)
+- Dart (Programming Language)
+
+
+## 🚀 Getting Started
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/expense-manager.git
+   cd expense-manager
