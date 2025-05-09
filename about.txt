@@ -1,0 +1,89 @@
+🧾 Main Features Overview
+Add, view, edit, and delete expenses
+
+Categorize expenses (e.g., Food, Transport, Bills)
+
+Visualize data through charts (Pie, Bar, Line)
+
+Filter by date range or category
+
+Store data locally (Hive/SQLite) or in the cloud
+
+Light/Dark theme support (optional)
+
+📄 Pages / Screens
+1. Home Dashboard
+✅ Key Features:
+
+Summary of total income, expenses, and balance
+
+Today's or this week's recent expenses
+
+Pie chart of expenses by category
+
+Bar/line chart of daily or monthly trends
+
+2. Transactions Page
+✅ Key Features:
+
+List of all expenses (grouped by date or category)
+
+Filter by date or category
+
+Search functionality
+
+Tap to edit/delete a transaction
+
+3. Add/Edit Transaction Page
+✅ Fields to include:
+
+Amount
+
+Category (dropdown or custom input)
+
+Type (Expense or Income)
+
+Date & Time picker
+
+Notes (optional)
+
+4. Categories Management Page
+✅ Key Features:
+
+Add, edit, or delete custom categories
+
+Option to set an icon or color for each category
+
+5. Analytics Page (Detailed Charts)
+✅ Key Features:
+
+Pie chart by category for selected month
+
+Bar chart of expenses per day/week
+
+Toggle between Income and Expense
+
+Time range selector (week/month/year/custom)
+
+6. Settings Page
+✅ Possible Options:
+
+Currency selection
+
+Theme toggle (Light/Dark)
+
+Data backup/export (e.g., JSON or CSV)
+
+Reset all data
+
+📦 Bonus Features (Optional)
+Budget setting & alerts (e.g., notify when close to limit)
+
+Cloud sync with Firebase or Supabase
+
+App lock with PIN or biometrics
+
+Notifications for due bills or recurring expenses
+
+Multi-user support with login
+
