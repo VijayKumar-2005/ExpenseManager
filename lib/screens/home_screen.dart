@@ -1,3 +1,4 @@
+import 'package:expensetracker/screens/SubScreens/transaction_details.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,7 +70,16 @@ class _HomeDashboardPageState extends State<HomeDashboardPage> {
                     final transaction = transactions[index];
                     return Card(
                       margin: const EdgeInsets.symmetric(vertical: 6),
-                      child: ListTile(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context)=>TransactionDetailsPage(transaction: transaction)
+                            )
+                          );
+                        },
+                        child: ListTile(
                         title: Text(
                           transaction.name,
                           style: GoogleFonts.inter(fontWeight: FontWeight.w500),
@@ -82,6 +92,7 @@ class _HomeDashboardPageState extends State<HomeDashboardPage> {
                             color: Colors.green),
                         trailing:
                         const Icon(Icons.arrow_forward_ios, size: 16),
+                      )
                       ),
                     );
                   },

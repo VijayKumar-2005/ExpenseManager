@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../home_screen.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -13,7 +12,11 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
-
+  final List<Color> color = [
+    Colors.red,
+    Colors.lightBlueAccent,
+    Colors.green
+  ];
   final List<Map<String, String>> onboardingData = [
     {
       "title": "Track Your Expenses",
@@ -34,16 +37,24 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   void _nextPage() {
     if (_currentIndex < onboardingData.length - 1) {
-      _pageController.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+      _pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
     } else {
       _finishOnboarding();
     }
   }
 
   void _finishOnboarding() {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => HomeDashboardPage()),
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => HomeDashboardPage(),
+        transitionsBuilder: (_, animation, __, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+        transitionDuration: Duration(milliseconds: 500),
+      ),
     );
   }
 
@@ -70,13 +81,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         const SizedBox(height: 40),
                         Text(
                           item["title"]!,
-                          style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                          style: GoogleFonts.inter(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 16),
                         Text(
                           item["subtitle"]!,
-                          style: GoogleFonts.inter(fontSize: 16, color: Colors.grey[400]),
+                          style: GoogleFonts.inter(
+                            fontSize: 16,
+                            color: Colors.grey[400],
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -94,15 +112,29 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 children: [
                   TextButton(
                     onPressed: _finishOnboarding,
-                    child: Text("Skip", style: TextStyle(color: Colors.grey[400])),
+                    child: Text(
+                      "Skip",
+                      style: TextStyle(color: Colors.grey[400]),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: _nextPage,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blueAccent,
-                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                      backgroundColor: color[_currentIndex],
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 12,
+                      ),
                     ),
-                    child: Text(_currentIndex == onboardingData.length - 1 ? "Get Started" : "Next"),
+                    child: Text(
+                      _currentIndex == onboardingData.length - 1
+                          ? "Get Started"
+                          : "Next",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ],
               ),
