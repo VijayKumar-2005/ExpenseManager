@@ -1,7 +1,6 @@
+import 'package:expensetracker/screens/GettingStarted_screens/UserAuth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../home_screen.dart';
-
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
@@ -49,7 +48,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void _finishOnboarding() {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
-        pageBuilder: (_, __, ___) => HomeDashboardPage(),
+        pageBuilder: (_, __, ___) => LoginScreen(),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(opacity: animation, child: child);
         },
